@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>struts2-boiler</artifactId>
+    <groupId>com.struts2boiler</groupId>
+    <artifactId>struts2boiler</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -68,7 +68,7 @@
     </dependencies>
 
     <build>
-        <finalName>struts2-boiler</finalName>
+        <finalName>struts2boiler</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -91,7 +91,7 @@
                 <version>9.4.48.v20220622</version>
                 <configuration>
                     <webApp>
-                        <contextPath>/struts2-boiler</contextPath>
+                        <contextPath>/struts2boiler</contextPath>
                     </webApp>
                     <httpConnector>
                         <port>8081</port>
