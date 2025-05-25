@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.struts2boiler.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.slf4j.Logger;

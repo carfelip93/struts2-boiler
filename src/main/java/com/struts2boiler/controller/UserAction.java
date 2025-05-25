@@ -1,6 +1,6 @@
-package com.example.controller;
+package com.struts2boiler.controller;
 
-import com.example.model.User;
+import com.struts2boiler.model.User;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.List;

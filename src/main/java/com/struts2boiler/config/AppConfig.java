@@ -1,4 +1,4 @@
-package com.example.config;
+package com.struts2boiler.config;
 
 import java.io.IOException;
 import java.io.InputStream;

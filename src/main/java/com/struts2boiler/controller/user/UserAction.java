@@ -1,8 +1,8 @@
-package com.example.controller.user;
+package com.struts2boiler.controller.user;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.example.model.User;
-import com.example.service.UserService;
+import com.struts2boiler.model.User;
+import com.struts2boiler.service.UserService;
 import java.util.List;
 
 public class UserAction extends ActionSupport {

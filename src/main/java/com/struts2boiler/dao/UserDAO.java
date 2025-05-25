@@ -1,6 +1,6 @@
-package com.example.dao;
+package com.struts2boiler.dao;
 
-import com.example.model.User;
+import com.struts2boiler.model.User;
 import java.util.List;
 
 public interface UserDAO {

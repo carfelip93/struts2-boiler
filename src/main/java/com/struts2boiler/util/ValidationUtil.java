@@ -1,4 +1,4 @@
-package com.example.util;
+package com.struts2boiler.util;
 
 import java.util.regex.Pattern;
 

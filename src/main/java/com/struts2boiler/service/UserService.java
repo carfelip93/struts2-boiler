@@ -1,6 +1,6 @@
-package com.example.service;
+package com.struts2boiler.service;
 
-import com.example.model.User;
+import com.struts2boiler.model.User;
 import java.util.ArrayList;
 import java.util.List;
 

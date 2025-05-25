@@ -1,21 +1,22 @@
-package com.example.model;
+package com.struts2boiler.dto;
 
-public class User {
+import java.io.Serializable;
+
+public class UserDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String username;
     private String email;
     private String fullName;
     private String role;
     private boolean active;
 
-    public User(String username) {
-        this.username = username;
-        this.email = username + "@example.com";
-        this.fullName = username;
-        this.role = "USER";
-        this.active = true;
+    // Default constructor
+    public UserDTO() {
     }
 
-    public User(String username, String email, String fullName, String role, boolean active) {
+    // Constructor with fields
+    public UserDTO(String username, String email, String fullName, String role, boolean active) {
         this.username = username;
         this.email = email;
         this.fullName = fullName;
