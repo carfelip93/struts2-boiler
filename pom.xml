@@ -97,8 +97,8 @@
                         <port>8081</port>
                         <idleTimeout>30000</idleTimeout>
                     </httpConnector>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <reload>manual</reload>
+                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                    <reload>automatic</reload>
                     <stopPort>8082</stopPort>
                     <stopKey>stop</stopKey>
                 </configuration>
