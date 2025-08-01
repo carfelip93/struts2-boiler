@@ -1,29 +1,28 @@
 package com.struts2boiler.controller.user;
 
-import com.struts2boiler.model.User;
-import com.struts2boiler.dao.UserDAO;
-import com.struts2boiler.dao.UserDAOImpl;
+import com.struts2boiler.dto.UserDTO;
+import com.struts2boiler.service.UserService;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
 
 public class UserAction extends ActionSupport {
-    private List<User> users;
-    private User user;
+    private List<UserDTO> users;
+    private UserDTO user;
     private String username;
-    private UserDAO userDAO;
+    private UserService userService;
 
     public UserAction() {
-        this.userDAO = new UserDAOImpl();
+        this.userService = new UserService();
     }
 
     public String list() {
-        users = userDAO.findAll();
+        users = userService.getAllUserDTOs();
         return SUCCESS;
     }
 
     public String view() {
         if (username != null) {
-            user = userDAO.findByUsername(username);
+            user = userService.getUserDTOByUsername(username);
             if (user != null) {
                 return SUCCESS;
             }
@@ -31,20 +30,47 @@ public class UserAction extends ActionSupport {
         return ERROR;
     }
 
+    public String create() {
+        if (user != null) {
+            userService.addUserDTO(user);
+            addActionMessage("User created successfully!");
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+
+    public String update() {
+        if (user != null) {
+            userService.updateUserDTO(user);
+            addActionMessage("User updated successfully!");
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+
+    public String delete() {
+        if (username != null) {
+            userService.deleteUserDTO(username);
+            addActionMessage("User deleted successfully!");
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+
     // Getters and Setters
-    public List<User> getUsers() {
+    public List<UserDTO> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<UserDTO> users) {
         this.users = users;
     }
 
-    public User getUser() {
+    public UserDTO getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserDTO user) {
         this.user = user;
     }
 
