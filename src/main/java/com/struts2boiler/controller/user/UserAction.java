@@ -1,37 +1,29 @@
 package com.struts2boiler.controller.user;
 
 import com.struts2boiler.model.User;
+import com.struts2boiler.dao.UserDAO;
+import com.struts2boiler.dao.UserDAOImpl;
 import com.opensymphony.xwork2.ActionSupport;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserAction extends ActionSupport {
     private List<User> users;
     private User user;
     private String username;
+    private UserDAO userDAO;
+
+    public UserAction() {
+        this.userDAO = new UserDAOImpl();
+    }
 
     public String list() {
-        // Create some sample users
-        users = new ArrayList<>();
-        users.add(new User("john", "john@example.com", "John Doe", "ADMIN", true));
-        users.add(new User("jane", "jane@example.com", "Jane Smith", "USER", true));
-        users.add(new User("bob", "bob@example.com", "Bob Johnson", "USER", false));
+        users = userDAO.findAll();
         return SUCCESS;
     }
 
     public String view() {
-        // Find user by username
         if (username != null) {
-            users = new ArrayList<>();
-            users.add(new User("john", "john@example.com", "John Doe", "ADMIN", true));
-            users.add(new User("jane", "jane@example.com", "Jane Smith", "USER", true));
-            users.add(new User("bob", "bob@example.com", "Bob Johnson", "USER", false));
-
-            user = users.stream()
-                    .filter(u -> u.getUsername().equals(username))
-                    .findFirst()
-                    .orElse(null);
-
+            user = userDAO.findByUsername(username);
             if (user != null) {
                 return SUCCESS;
             }
