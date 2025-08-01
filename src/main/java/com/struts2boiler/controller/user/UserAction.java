@@ -15,6 +15,11 @@ public class UserAction extends ActionSupport {
         this.userService = new UserService();
     }
 
+    public String home() {
+        // Redirect to list view for user home
+        return list();
+    }
+
     public String list() {
         users = userService.getAllUserDTOs();
         return SUCCESS;

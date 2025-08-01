@@ -22,6 +22,10 @@
 
     <!-- User Module -->
     <package name="user" extends="global" namespace="/user">
+        <action name="home" class="com.struts2boiler.controller.user.UserAction" method="home">
+            <result name="success">/WEB-INF/content/user/list.jsp</result>
+        </action>
+        
         <action name="list" class="com.struts2boiler.controller.user.UserAction" method="list">
             <result name="success">/WEB-INF/content/user/list.jsp</result>
         </action>

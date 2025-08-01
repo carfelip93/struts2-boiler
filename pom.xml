@@ -101,6 +101,13 @@
                     <reload>automatic</reload>
                     <stopPort>8082</stopPort>
                     <stopKey>stop</stopKey>
+                    <jvmArgs>
+                        <jvmArg>--add-opens=java.base/java.util=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens=java.base/java.lang=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens=java.base/java.lang.reflect=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens=java.base/java.text=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens=java.desktop/java.awt.font=ALL-UNNAMED</jvmArg>
+                    </jvmArgs>
                 </configuration>
             </plugin>
         </plugins>
