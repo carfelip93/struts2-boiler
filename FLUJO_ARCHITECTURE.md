@@ -79,5 +79,5 @@
 
 # Reload Projects
 
-mvn clean install
-f1->java: Reload Projects
+- **mvn clean install**
+- **java: Reload Projects**:
